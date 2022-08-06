@@ -18,7 +18,7 @@ function get(){
                 <i class="fa fa-trash-alt"></i>
             </button>
             <button class="complete">
-                <span><i class="fa fa-check-circle"></i></span>
+               <span> <i class="fa fa-check-circle"></i></span>
             </button>
         </div>
       
@@ -44,53 +44,23 @@ function actives(){
         // đánh dấu hoàn thành
         const btnComplete = li.querySelector('.complete');
         btnComplete.onclick = () => {
-            btnComplete.classList.add('fa');
 
-            getEle('#completed').insertAdjacentElement('afterbegin',li)
+            const spanEle = btnComplete.querySelector('#completed span')
+            if(!spanEle){
+
+                getEle('#completed').insertAdjacentElement('afterbegin',li)
+            }else{
+
+                getEle('#todo').insertAdjacentElement('beforeEnd',li)
+
+
+            }
+
         }
     })
 }
 
-
-
-// (
-
-// // remove actives
-// // const remove = () =>{
-
-// //     // const removeList = document.querySelectorAll('.remove');
-// //     // console.log(removeList);
-// //     // removeList.forEach(item => {
-// //     //     item.onclick = () =>{
-         
-        
-// //     //      item.closest('li').remove()
-// //     //  }
- 
-// //     // })
-// // }
-// // remove()
-
-// // complete actives
-
-// // function completes(){
-// //     const completeList = document.querySelectorAll('.complete');
-// //     console.log(completeList)
-// //     completeList.forEach(item => {
-// //         item.onclick = () =>{
-// //             let liElement = item.closest('li');
-// //             console.log(item)
-// //             item.classList.add('fa')
-// //             getEle('#completed').insertAdjacentElement('afterbegin',liElement)
-            
-// //         }
-// //     })
-// // }
-// // completes()
-// )
 // sắp xếp a -> z
-
-   
     
     getEle('#two').onclick = () =>{
             let arr = [];
